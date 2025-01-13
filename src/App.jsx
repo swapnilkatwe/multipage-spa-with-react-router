@@ -4,14 +4,20 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home";
 import Products from "./pages/Products";
 import ProductDetails from "./pages/ProductDetails";
+import RootLayout from "./pages/RootLayout";
 
 function App() {
 
   // --> Option one
   const router = createBrowserRouter([
-    { path: "/", element: <Home /> },
-    { path: "/products", element: <Products /> },
-    { path: "/productdetails", element: <ProductDetails /> },
+    {path: "/",
+      element: <RootLayout />,
+      children: [
+        { path: "/", element: <Home /> },
+        { path: "/products", element: <Products /> },
+        { path: "/productdetails", element: <ProductDetails /> },
+      ]
+    },
   ]);
 
   // --> Option Two
