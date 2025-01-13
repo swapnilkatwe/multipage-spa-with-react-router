@@ -13,7 +13,7 @@ export default function MainNavigation() {
               className={({ isActive }) =>
                 isActive ? cssClasses.active : undefined
               }
-              end
+              end // to confirm its ends with this / 
             >
               Home
             </NavLink>
