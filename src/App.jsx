@@ -15,12 +15,14 @@ function App() {
       element: <RootLayout />,
       errorElement: <ErrorPage />,
       children: [
-        { path: "/", element: <Home />},
+        { index: true, element: <Home />},
         { path: "/products", element: <Products /> },
         { path: "/products/:productId", element: <ProductDetails /> },
       ]
     },
   ]);
+ // NOTE: Both will give same result: { index: true, element: <Home />} or { path:"/" , element: <Home />}
+
 
   // --> Option Two
   // const routeDefinitions = createRoutesFromElements(
